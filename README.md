@@ -13,7 +13,7 @@ A full stack Spring boot application
 * JavaScript
 
 ### Project Tracking
-* Kanban board in GitHub Projects - https://github.com/Krishna-Koyyalamudi/group-6-full-stack-app/projects/1
+* GitHub Projects - [Kanban board](https://github.com/Krishna-Koyyalamudi/group-6-full-stack-app/projects/1)
 
 ### Tools and Software
 * JDK - [Download](https://adoptopenjdk.net/)
