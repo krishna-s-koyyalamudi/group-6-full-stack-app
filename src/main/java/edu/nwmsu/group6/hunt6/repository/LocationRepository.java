@@ -4,7 +4,7 @@ import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import edu.nwmsu.group6.hunt6.model.Location;
+import edu.nwmsu.group6.hunt6.entity.Location;
 
 @Repository
 public interface LocationRepository extends JpaRepository<Location, Serializable> {

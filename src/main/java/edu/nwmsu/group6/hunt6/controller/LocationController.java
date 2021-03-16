@@ -4,7 +4,7 @@ import javax.annotation.Resource;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.nwmsu.group6.hunt6.model.Location;
+import edu.nwmsu.group6.hunt6.entity.Location;
 import edu.nwmsu.group6.hunt6.repository.LocationRepository;
 
 @RestController
@@ -12,6 +12,7 @@ public class LocationController {
 
 	@Resource
     private LocationRepository loc;
+	
 	
 	public void createLocation(Location l) {
 		loc.save(l);
