@@ -22,6 +22,7 @@ public class HuntController {
 		return mv;
 	}
 	
+	
 	@GetMapping
 	public String huntDemo() {
 		return "serviceUp";

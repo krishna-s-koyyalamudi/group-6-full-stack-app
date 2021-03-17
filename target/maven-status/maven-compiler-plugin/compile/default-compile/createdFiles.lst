@@ -1,2 +1,5 @@
 edu\nwmsu\group6\hunt6\Hunt6Application.class
 edu\nwmsu\group6\hunt6\controller\HuntController.class
+edu\nwmsu\group6\hunt6\repository\LocationRepository.class
+edu\nwmsu\group6\hunt6\controller\LocationController.class
+edu\nwmsu\group6\hunt6\entity\Location.class
