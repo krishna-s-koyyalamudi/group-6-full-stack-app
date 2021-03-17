@@ -2,11 +2,21 @@ package edu.nwmsu.group6.hunt6.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "locations")
 public class Location {
 	@Id
+	@GeneratedValue(generator = "location_generator")
+    @SequenceGenerator(
+            name = "location_generator",
+            sequenceName = "location_sequence",
+            initialValue = 1000
+    )
 	private int locationId;
 	@Column(name="name")
 	private String location_name;
@@ -14,6 +24,15 @@ public class Location {
 	private double latitude;
 	@Column(name="longitude")
 	private double longitude;
+	
+	public Location(int locationId, String location_name, double latitude, double longitude) {
+		super();
+		this.locationId = locationId;
+		this.location_name = location_name;
+		this.latitude = latitude;
+		this.longitude = longitude;
+	}
+	
 	public int getLocationId() {
 		return locationId;
 	}

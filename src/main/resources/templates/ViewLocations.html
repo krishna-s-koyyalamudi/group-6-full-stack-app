@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<title>Locations List</title>
+</head>
+
+    <br/>
+    <br/>
+    
+    <table border="1" class="table" style="color: black">
+		<tr style="font-size: 13">
+                    <td>locationId</td>
+			<td>location_name</td>
+			<td>latitude</td>
+			<td>longitude</td>
+			<td>Edit</td>
+			<td>Delete</td>
+		</tr>
+<!-- 		<tr th:each="dog: ${dogs}"> -->
+<!-- 			<td><p th:text="${dog.id}" /></td> -->
+<!-- 			<td><p th:text="${dog.name}" /></td> -->
+<!-- 			<td><p th:text="${dog.breed}" /></td> -->
+<!-- 			<td><p th:text="${dog.trainer}" /></td> -->
+<!-- 			<td><a -->
+<!-- 				th:href="@{/editDog?id={id}(id=${dog.id})}+ '&'+ -->
+<!-- 			@{name={name}(name=${dog.name})}+ '&'+ -->
+<!-- 			@{breed={breed}(breed=${dog.breed})}">EDIT</a></td> -->
+<!-- 			<td><a class="delbtn" -->
+<!-- 				th:href="@{/deleteDog?id={id}(id=${dog.id})}+ '&'+ -->
+<!-- 			@{name={name}(name=${dog.name})}+ '&'+ -->
+<!-- 			@{breed={breed}(breed=${dog.breed})}">DELETE</a></td> -->
+
+<!-- 		</tr> -->
+	</table>
+    <br>
+    <input
+                    action="action"
+                    onclick="window.history.go(-1); return false;"
+                    type="submit"
+                    value="Back"
+                    style="font-style: italic;margin-left: 40em; background-color:black;color:white"
+                    />
+    
+
+</body>
+</html>
