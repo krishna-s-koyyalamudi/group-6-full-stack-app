@@ -32,7 +32,16 @@ public class HuntController {
   return mv;
   
   }
-	
+	@RequestMapping("ViewLists")
+	  public ModelAndView ViewLists(){
+		  ModelAndView mv=new ModelAndView();
+      mv.setViewName("ViewLocations.html");
+//      Iterable<Trainer> LocationsList = LocationRepository.findAll();
+//      mv.addObject("Location",trainersList);
+      
+  return mv;
+  
+  }
 	
 	@GetMapping
 	public String huntDemo() {
