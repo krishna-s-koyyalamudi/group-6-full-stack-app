@@ -8,7 +8,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "locations")
+@Table(name = "location")
 public class Location {
 	@Id
 	@GeneratedValue(generator = "location_generator")
@@ -17,28 +17,20 @@ public class Location {
             sequenceName = "location_sequence",
             initialValue = 1000
     )
-	private int locationId;
+	private int id;
 	@Column(name="name")
 	private String location_name;
 	@Column(name="latitude")
 	private double latitude;
 	@Column(name="longitude")
 	private double longitude;
-	
-	public Location(int locationId, String location_name, double latitude, double longitude) {
-		super();
-		this.locationId = locationId;
-		this.location_name = location_name;
-		this.latitude = latitude;
-		this.longitude = longitude;
+
+	public int getId() {
+		return id;
 	}
-	
-	public int getLocationId() {
-		return locationId;
-	}
-	public void setLocationId(int locationId) {
-		this.locationId = locationId;
-	}
+	public void setId(int id) {
+		this.id = id;
+	}	
 	public String getLocation_name() {
 		return location_name;
 	}
@@ -57,10 +49,9 @@ public class Location {
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
-	
 	@Override
 	public String toString() {
-		return "Location [locationId=" + locationId + ", location_name=" + location_name + ", latitude=" + latitude
-				+ ", longitude=" + longitude + "]";
+		return "Location [id=" + id + ", location_name=" + location_name + ", latitude=" + latitude + ", longitude="
+				+ longitude + "]";
 	}
 }

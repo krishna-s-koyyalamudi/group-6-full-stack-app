@@ -29,9 +29,9 @@ public class LocationController {
 		return locationRepository.findAll(pageable);
 	}
 	
-	@GetMapping("/location")
-	public Page<Location> getLocation(int locationid) {
-		Location location=locationRepository.findById(locationid).get();
+	@GetMapping("/location/{locationId}")
+	public Page<Location> getLocation(@PathVariable int locationId, @Validated @RequestBody Location locationRequest) {
+		Location location=locationRepository.findById(locationId).get();
 		return (Page<Location>) location;
 	}
 

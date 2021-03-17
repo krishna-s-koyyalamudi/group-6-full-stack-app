@@ -12,7 +12,7 @@ public class HuntController {
 	
 	
 	
-	@RequestMapping("/hunt")
+	@RequestMapping("/")
 	@ResponseBody
 	public ModelAndView show()
 	{
