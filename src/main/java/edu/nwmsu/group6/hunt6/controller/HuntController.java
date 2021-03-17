@@ -22,6 +22,17 @@ public class HuntController {
 		return mv;
 	}
 	
+	@RequestMapping("addQuest")
+	  public ModelAndView addLocation(){
+		  ModelAndView mv=new ModelAndView();
+      mv.setViewName("addLocation.html");
+//      Iterable<Trainer> LocationsList = LocationRepository.findAll();
+//      mv.addObject("Location",trainersList);
+      
+  return mv;
+  
+  }
+	
 	
 	@GetMapping
 	public String huntDemo() {
