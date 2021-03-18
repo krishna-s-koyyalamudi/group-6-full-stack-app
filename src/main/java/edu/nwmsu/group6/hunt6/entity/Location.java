@@ -3,20 +3,22 @@ package edu.nwmsu.group6.hunt6.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "location")
+@SequenceGenerator(
+        name = "location_generator",
+        //sequenceName = "location_sequence",
+        initialValue = 1000,
+        allocationSize = 100
+)
 public class Location {
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator = "location_generator")
 	@Id
-	@GeneratedValue(generator = "location_generator")
-    @SequenceGenerator(
-            name = "location_generator",
-            sequenceName = "location_sequence",
-            initialValue = 1000
-    )
 	private int id;
 	@Column(name="name")
 	private String location_name;
