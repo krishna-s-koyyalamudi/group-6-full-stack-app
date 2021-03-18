@@ -5,55 +5,49 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html style="margin-top: 40px" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <!-- Required meta tags -->
+<head>
+<!-- Required meta tags -->
 <!--         <meta charset="utf-8"> -->
 <!--         <meta name="viewport" -->
 <!--               content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
 
-        <!-- Bootstrap CSS -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet"
-              href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-              crossorigin="anonymous">
-        <title>LocationPage</title>
-    </head>
-   <body>
-   
-    <header style="background-color: green;padding: 1px;text-align: center;">
-                <h1>Hunt-Group06</h1>
-            </header>
-        <div class="container">
+<!-- Bootstrap CSS -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<title>LocationPage</title>
+</head>
+<body>
+	<header
+		style="background-color: green; padding: 1px; text-align: center;">
+		<h1>Hunt-Group06</h1>
+	</header>
+	<div class="container">
+		<h2 style="text-align: center">Add New Locations</h2>
+		<form style="text-align: center" action="#" th:action="@{/locations}" th:object="${locations}" method="post">
+			<!--                 <input type="text" name="locationId" placeholder="Enter Location id" style="font-style: italic"><br> -->
+			<br> <input type="text" name="location_name"
+				placeholder="Enter Location name" style="font-style: italic"><br>
 
-            <h2 style="text-align: center">Add New Locations</h2>
-            <form style="text-align: center" th:action="addQuest">
-<!--                 <input type="text" name="locationId" placeholder="Enter Location id" style="font-style: italic"><br> -->
-                <br> <input type="text" name="location_name" placeholder="Enter Location name" style="font-style: italic"><br>
-
-                <br> <input type="text" name="latitude" placeholder="Enter latitude" style="font-style: italic"><br>
-                <br> <input type="text" name="longitude" placeholder="Enter longitude" style="font-style: italic"><br>
-                
-
-               <br> <button type="submit" style="font-style: italic; background-color:black;color:white">Save</button>
-                <input
-                    action="action"
-                    onclick="window.history.go(-1); return false;"
-                    type="submit"
-                    value="Back"
-                    style="font-style: italic; background-color:black;color:white"
-                    />
-                    
-                   
-
-            </form>
-        </div>
-        <div style="margin-top: 18px;">
-<form action="ViewLists">
-            <input type="submit" value="View Locations" style="font-style: italic;margin-left: 39em;background-color:black;color:white">
-	</form>
-</div>
-
-
-    </body>
+			<br> <input type="text" name="latitude"
+				placeholder="Enter latitude" style="font-style: italic"><br>
+			<br> <input type="text" name="longitude"
+				placeholder="Enter longitude" style="font-style: italic"><br>
+			<br>
+			<button type="submit"
+				style="font-style: italic; background-color: black; color: white">Save</button>
+			<input action="action" onclick="window.history.go(-1); return false;"
+				type="submit" value="Back"
+				style="font-style: italic; background-color: black; color: white" />
+		</form>
+	</div>
+	<div style="margin-top: 18px;">
+		<form action="ViewLocations">
+			<input type="submit" value="View Locations"
+				style="font-style: italic; margin-left: 39em; background-color: black; color: white">
+		</form>
+	</div>
+</body>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhmtl"
+      xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Edit Location</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+              crossorigin="anonymous">
+
+    </head>
+    <body>
+        <div class="container">
+            <h2>Edit Dog</h2>
+            <br />
+            <br />
+            <form th:action="editLocation" th:object="${location}">
+		<p th:text="Updating+' '+${location}" />
+		<input type="text" th:field="*{id}" name="id" readonly>
+                <br />
+		<input type="text" th:field="*{location_name}" name="location_name" 
+                       placeholder="location_name">
+                <br />
+		<input type="text" th:field="*{latitude}" name="latitude"
+			placeholder="latitude">
+			<br />
+		<input type="text" th:field="*{longitude}" name="longitude"
+			placeholder="longitude">
+                <input type="submit">
+	</form>
+      
+        </div>
+    </body>
+</html>
