@@ -17,7 +17,15 @@ public class HuntController {
 	private LocationRepository locationRepository;
 
 	ModelAndView mv = new ModelAndView();
+	
 
+	@RequestMapping("/swaroop")
+	@ResponseBody
+	public ModelAndView swaroop() {
+		mv.setViewName("aboutSwaroop");
+		return mv;
+	}
+	
 	@RequestMapping("/")
 	@ResponseBody
 	public ModelAndView home() {
