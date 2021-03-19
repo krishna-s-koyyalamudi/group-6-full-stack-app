@@ -43,24 +43,23 @@ and open the template in the editor.
 		<td>Edit</td>
 		<td>Delete</td>
 	</tr>
-			<tr th:each="location: ${locations}">
-				<td><p th:text="${location.id}" /></td>
-				<td><p th:text="${location.location_name}" /></td>
-				<td><p th:text="${location.latitude}" /></td>
-				<td><p th:text="${location.longitude}" /></td>
-				<td>
-				<a
-					th:href="@{/editLocation?id={id}(id=${location.id})}+ '&'+
+	<tr th:each="location: ${locations}">
+		<td><p th:text="${location.id}" /></td>
+		<td><p th:text="${location.location_name}" /></td>
+		<td><p th:text="${location.latitude}" /></td>
+		<td><p th:text="${location.longitude}" /></td>
+		<td><a
+			th:href="@{/editLocation?id={id}(id=${location.id})}+ '&'+
 				@{location_name={location_name}(location_name=${location.location_name})}+ '&'+
 				@{latitude={latitude}(latitude=${location.latitude})}+ '&'+
 				@{longitude={longitude}(longitude=${location.longitude})}">EDIT</a></td>
-				<td><a class="delbtn"
-					th:href="@{/deleteLocation?id={id}(id=${location.id})}+ '&'+
+		<td><a class="delbtn"
+			th:href="@{/deleteLocation?id={id}(id=${location.id})}+ '&'+
 				@{location_name={location_name}(location_name=${location.location_name})}+ '&'+
 				@{latitude={latitude}(latitude=${location.latitude})}+ '&'+
 				@{longitude={longitude}(longitude=${location.longitude})}">DELETE</a></td>
 
-			</tr>
+	</tr>
 </table>
 <br>
 <input action="action" onclick="window.history.go(-1); return false;"

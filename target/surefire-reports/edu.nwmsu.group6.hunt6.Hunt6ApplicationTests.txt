@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: edu.nwmsu.group6.hunt6.Hunt6ApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.762 s - in edu.nwmsu.group6.hunt6.Hunt6ApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.629 s - in edu.nwmsu.group6.hunt6.Hunt6ApplicationTests

@@ -3,54 +3,65 @@ package edu.nwmsu.group6.hunt6.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "location")
-@SequenceGenerator(
-        name = "location_generator",
-        //sequenceName = "location_sequence",
-        initialValue = 1000,
-        allocationSize = 100
-)
+@Table(name = "locations")
 public class Location {
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator = "location_generator")
+
 	@Id
-	private int id;
-	@Column(name="name")
+	@Column(name = "id")
+	@GeneratedValue(generator = "location_generator")
+	@SequenceGenerator(name = "location_generator", sequenceName = "location_sequence", initialValue = 1000)
+	private Long id;
+
+	@NotNull
+	@Column(name = "location_name")
 	private String location_name;
-	@Column(name="latitude")
+
+	@NotNull
+	@Column(name = "latitude")
 	private double latitude;
-	@Column(name="longitude")
+
+	@NotNull
+	@Column(name = "longitude")
 	private double longitude;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+
+	public void setId(Long id) {
 		this.id = id;
-	}	
+	}
+
 	public String getLocation_name() {
 		return location_name;
 	}
+
 	public void setLocation_name(String location_name) {
 		this.location_name = location_name;
 	}
+
 	public double getLatitude() {
 		return latitude;
 	}
+
 	public void setLatitude(double latitude) {
 		this.latitude = latitude;
 	}
+
 	public double getLongitude() {
 		return longitude;
 	}
+
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
+
 	@Override
 	public String toString() {
 		return "Location [id=" + id + ", location_name=" + location_name + ", latitude=" + latitude + ", longitude="

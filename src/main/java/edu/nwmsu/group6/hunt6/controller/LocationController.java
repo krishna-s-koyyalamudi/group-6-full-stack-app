@@ -1,21 +1,16 @@
 package edu.nwmsu.group6.hunt6.controller;
 
+import java.util.Optional;
+
 import javax.annotation.Resource;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import edu.nwmsu.group6.hunt6.entity.Location;
-import edu.nwmsu.group6.hunt6.exception.ResourceNotFoundException;
 import edu.nwmsu.group6.hunt6.repository.LocationRepository;
 
 @RestController
@@ -24,37 +19,51 @@ public class LocationController {
 	@Resource
 	private LocationRepository locationRepository;
 
-	@GetMapping("/locations")
-	public Page<Location> getLocations(Pageable pageable) {
-		return locationRepository.findAll(pageable);
-	}
-	
-	@GetMapping("/location/{locationId}")
-	public Page<Location> getLocation(@PathVariable int locationId, @Validated @RequestBody Location locationRequest) {
-		Location location=locationRepository.findById(locationId).get();
-		return (Page<Location>) location;
+	ModelAndView mv = new ModelAndView();
+
+	@RequestMapping(value = "/addlocation")
+	public ModelAndView addLocation() {
+		mv.setViewName("addLocation.html");
+		return mv;
 	}
 
-	@PostMapping("/locations")
-	public void createLocation(Location l) {
-		locationRepository.save(l);
+	@RequestMapping(value = "/location", method = RequestMethod.POST)
+	public ModelAndView addNewLocation(Location location) {
+		locationRepository.save(location);
+		mv.setViewName("index");
+		return mv;
 	}
 
-	@PutMapping("/locations/{locationId}")
-	public Location updateLocation(@PathVariable int locationId, @Validated @RequestBody Location locationRequest) {
-		return locationRepository.findById(locationId).map(location -> {
-			location.setLocation_name(locationRequest.getLocation_name());
-			location.setLatitude(locationRequest.getLatitude());
-			location.setLongitude(locationRequest.getLongitude());
-			return locationRepository.save(location);
-		}).orElseThrow(() -> new ResourceNotFoundException("Location not found with id " + locationId));
+	@RequestMapping(value = "/locations", method = RequestMethod.GET)
+	public ModelAndView viewLocations() {
+		mv.setViewName("viewLocations.html");
+		Iterable<Location> locationsList = locationRepository.findAll();
+		mv.addObject("locations", locationsList);
+		return mv;
 	}
 
-	@DeleteMapping("/locations/{locationId}")
-	public ResponseEntity<?> deleteLocation(@PathVariable int locationId) {
-		return locationRepository.findById(locationId).map(location -> {
+	@RequestMapping(value = "/location/{id}", method = RequestMethod.GET)
+	public ModelAndView search(@PathVariable("id") Long id) {
+		Location locationFound = locationRepository.findById(id).orElse(new Location());
+		mv.addObject(locationFound);
+		mv.setViewName("searchResults");
+		return mv;
+	}
+
+	@RequestMapping(value = "/location/{id}", method = RequestMethod.PATCH)
+	public ModelAndView editLocation(Location location) {
+		locationRepository.save(location);
+		mv.setViewName("editLocation");
+		return mv;
+	}
+
+	@RequestMapping(value = "/location/{id}", method = RequestMethod.DELETE)
+	public ModelAndView deleteLocation(Location location) {
+		Optional<Location> locationFound = locationRepository.findById(location.getId());
+		if (locationFound.isPresent()) {
 			locationRepository.delete(location);
-			return ResponseEntity.ok().build();
-		}).orElseThrow(() -> new ResourceNotFoundException("Location not found with id " + locationId));
+		}
+		return viewLocations();
 	}
+
 }
