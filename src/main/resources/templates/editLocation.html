@@ -19,16 +19,24 @@ and open the template in the editor.
 </head>
 <body>
 	<div class="container">
-		<h2>Edit Dog</h2>
+		<h2>Edit Location</h2>
 		<br /> <br />
-		<form th:action="editLocation" th:object="${location}">
-			<p th:text="Updating+' '+${location}" />
-			<input type="text" th:field="*{id}" name="id" readonly> <br />
-			<input type="text" th:field="*{location_name}" name="location_name"
-				placeholder="location_name"> <br /> <input type="text"
-				th:field="*{latitude}" name="latitude" placeholder="latitude">
-			<br /> <input type="text" th:field="*{longitude}" name="longitude"
-				placeholder="longitude"> <input type="submit">
+		<form action="#"
+			th:action="@{/location/update/{id}(id=${location.id})}"
+			th:object="${location}" method="post">
+			<label for="location_name">Name</label> <input type="text"
+				th:field="*{location_name}" id="location_name"
+				placeholder="Location Name"> <span
+				th:if="${#fields.hasErrors('location_name')}"
+				th:errors="*{location_name}"></span> <label for="latitude">Latitude</label>
+			<input type="text" th:field="*{latitude}" id="latitude"
+				placeholder="Latitude"> <span
+				th:if="${#fields.hasErrors('latitude')}" th:errors="*{latitude}"></span>
+			<label for="longitude">Longitude</label> <input type="text"
+				th:field="*{longitude}" id="longitude" placeholder="Longitude">
+			<span th:if="${#fields.hasErrors('longitude')}"
+				th:errors="*{longitude}"></span> <input type="submit"
+				value="Update Location">
 		</form>
 
 	</div>

@@ -35,43 +35,26 @@ and open the template in the editor.
 <br />
 <br />
 <table border="1" class="table" style="color: black">
-	<tr style="font-size: 13">
-		<td>locationId</td>
-		<td>location_name</td>
-		<td>latitude</td>
-		<td>longitude</td>
-		<td>Edit</td>
-		<td>Delete</td>
-	</tr>
-	<tr th:each="location: ${locations}">
-		<td><p th:text="${location.id}" /></td>
-		<td><p th:text="${location.location_name}" /></td>
-		<td><p th:text="${location.latitude}" /></td>
-		<td><p th:text="${location.longitude}" /></td>
-		<!--<td><a
-			th:href="@{/editLocation?id={id}(id=${location.id})}+ '&'+
-				@{location_name={location_name}(location_name=${location.location_name})}+ '&'+
-				@{latitude={latitude}(latitude=${location.latitude})}+ '&'+
-				@{longitude={longitude}(longitude=${location.longitude})}">EDIT</a></td>-->
-		<!--<td><a class="delbtn"
-			th:href="@{/deleteLocation?id={id}(id=${location.id})}+ '&'+
-				@{location_name={location_name}(location_name=${location.location_name})}+ '&'+
-				@{latitude={latitude}(latitude=${location.latitude})}+ '&'+
-				@{longitude={longitude}(longitude=${location.longitude})}">DELETE</a></td>-->
-		<td><form action="#" th:action="@{'/location/{id}'(id=${location.id})}" th:method="patch" >
-    <button type="submit" class="btn">
-        Edit
-    </button>
-</form>
-		</td>
-		<td><form action="#" th:action="@{'/location/{id}'(id=${location.id})}" th:method="delete" >
-    <button type="submit" class="btn">
-        Delete
-    </button>
-</form>
-		</td>
-
-	</tr>
+	<thead>
+		<tr style="font-size: 13">
+			<td>locationId</td>
+			<td>location_name</td>
+			<td>latitude</td>
+			<td>longitude</td>
+			<td>Edit</td>
+			<td>Delete</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="location: ${locations}">
+			<td><p th:text="${location.id}" /></td>
+			<td><p th:text="${location.location_name}" /></td>
+			<td><p th:text="${location.latitude}" /></td>
+			<td><p th:text="${location.longitude}" /></td>
+			<td><a th:href="@{location/edit/{id}(id=${location.id})}">Edit</a></td>
+			<td><a th:href="@{location/delete/{id}(id=${location.id})}">Delete</a></td>
+		</tr>
+	</tbody>
 </table>
 <br>
 <input action="action" onclick="window.history.go(-1); return false;"

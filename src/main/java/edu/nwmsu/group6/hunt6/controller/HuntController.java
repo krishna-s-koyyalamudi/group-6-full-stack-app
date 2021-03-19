@@ -20,7 +20,7 @@ public class HuntController {
 
 	@RequestMapping("/")
 	@ResponseBody
-	public ModelAndView show() {
+	public ModelAndView home() {
 		System.out.println("Entering Home");
 		mv.setViewName("index");
 		return mv;

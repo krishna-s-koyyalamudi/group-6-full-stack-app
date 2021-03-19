@@ -26,8 +26,8 @@ and open the template in the editor.
 	</header>
 	<div class="container">
 		<h2 style="text-align: center">Add New Locations</h2>
-		<form style="text-align: center" action="#" th:action="@{/location}"
-			th:object="${location}" method="post">
+		<form style="text-align: center" action="#"
+			th:action="@{/location/create}" th:object="${location}" method="post">
 			<!--                 <input type="text" name="location_id" placeholder="Enter Location id" style="font-style: italic"><br> -->
 			<br> <input type="text" name="location_name"
 				placeholder="Enter Location name" style="font-style: italic"><br>
