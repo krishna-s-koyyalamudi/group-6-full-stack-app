@@ -25,6 +25,13 @@ public class HuntController {
 		mv.setViewName("index");
 		return mv;
 	}
+	
+	@RequestMapping("/krishna")
+	@ResponseBody
+	public ModelAndView krishna() {
+		mv.setViewName("aboutKrishna");
+		return mv;
+	}
 
 	@GetMapping
 	public String huntDemo() {
