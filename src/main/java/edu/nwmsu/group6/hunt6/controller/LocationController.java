@@ -1,5 +1,8 @@
 package edu.nwmsu.group6.hunt6.controller;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 import javax.annotation.Resource;
 import javax.validation.Valid;
 
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import antlr.collections.List;
 import edu.nwmsu.group6.hunt6.entity.Location;
 import edu.nwmsu.group6.hunt6.repository.LocationRepository;
 
@@ -21,6 +25,16 @@ public class LocationController {
 	private LocationRepository locationRepository;
 
 	ModelAndView mv = new ModelAndView();
+	
+	@RequestMapping(value = "/randomLocation", method = RequestMethod.GET)
+	public ModelAndView getRandomLocation() {
+		mv.setViewName("index");
+		Iterable<Location> locationsList = locationRepository.findAll();
+	    Random rand = new Random();
+		mv.addObject("locations", locationsList);
+		return mv;
+	}
+
 
 	@RequestMapping(value = "/addlocation")
 	public ModelAndView addLocation() {

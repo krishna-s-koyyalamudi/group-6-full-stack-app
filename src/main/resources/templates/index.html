@@ -35,10 +35,18 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Random Location</h5>
-                    <p class="card-text">
-                        With supporting text below as a natural lead-in to additional content.
+                    <form action="#" th:action="@{/randomLocation}" th:object="${location}" method="get">
+                    <p class="card-text" th:each="location: ${locations}"  >
+                    
+                    <span th:text="${location.location_name}"></span>
+                    
+<!--                         With supporting text below as a natural lead-in to additional content. -->
                     </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    
+                      <button type="submit"
+				style="font-style: italic; background-color: black; color: white">GetReady</button>
+				</form>
+<!--                     <a href="#" class="btn btn-primary">Go somewhere</a> -->
                 </div>
             </div>
         </div>
@@ -52,6 +60,8 @@
                     <p class="card-text">
                         With supporting text below as a natural lead-in to additional content.
                     </p>
+                    
+                  
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
