@@ -39,7 +39,7 @@ html, body {
 					<h5 class="card-title">Random Location</h5>
 					<form action="#" th:action="@{/location/random}"
 						th:object="${location}" method="get">
-						<p class="card-text" th:each="location: ${locations}">
+						<p class="card-text" th:each="location: ${location}">
 
 							<span th:text="${location.location_name}"></span> 
 							<!-- Get a random location to explore -->
@@ -81,7 +81,7 @@ html, body {
 				<form class="d-flex input-group w-auto">
 					<input type="search" class="form-control" name="location_name"
 						placeholder="Enter Location" aria-label="Search" />
-					<!--                     <button class="btn btn-outline-light" type="button">Search</button> -->
+					<button class="btn btn-outline-light" type="button">Search</button>
 				</form>
 			</div>
 		</nav>

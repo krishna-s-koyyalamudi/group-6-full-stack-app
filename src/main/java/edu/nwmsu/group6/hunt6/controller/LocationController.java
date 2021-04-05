@@ -1,6 +1,10 @@
 package edu.nwmsu.group6.hunt6.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
@@ -24,16 +28,21 @@ public class LocationController {
 	private LocationRepository locationRepository;
 
 	ModelAndView mv = new ModelAndView();
-	
+
 	@RequestMapping(value = "/location/random", method = RequestMethod.GET)
 	public ModelAndView getRandomLocation() {
 		mv.setViewName("index");
-		Iterable<Location> locationsList = locationRepository.findAll();
-	    Random rand = new Random();
-		mv.addObject("locations", locationsList);
+		List<Location> locationsList = (List<Location>) locationRepository.findAll();
+		List<Long> idList = new ArrayList<Long>();
+		for (Location l : locationsList) {
+			idList.add(l.getId());
+		}
+		Random random = new Random();
+		int rand = random.nextInt(locationsList.size());
+		Location randomLocation = locationsList.get(rand);
+		mv.addObject("location",randomLocation);
 		return mv;
 	}
-
 
 	@RequestMapping(value = "/addlocation")
 	public ModelAndView addLocation() {
