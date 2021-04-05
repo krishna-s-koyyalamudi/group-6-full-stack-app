@@ -44,7 +44,7 @@ html, body {
 							<span th:text="${location.location_name}"></span> 
 							<!-- Get a random location to explore -->
 						</p>
-						<button type="submit" class="btn btn-primary">GetReady</button>
+						<button type="submit" class="btn btn-primary" th:onclick="getRandomLocation()">GetReady</button>
 						<!--                       <button type="submit"
 				style="font-style: italic; background-color: black; color: white">GetReady</button> -->
 					</form>
