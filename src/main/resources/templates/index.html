@@ -41,10 +41,11 @@ html, body {
 						th:object="${location}" method="get">
 						<p class="card-text" th:each="location: ${location}">
 
-							<span th:text="${location.location_name}"></span> 
+							<span th:text="${location.location_name}"></span>
 							<!-- Get a random location to explore -->
 						</p>
-						<button type="submit" class="btn btn-primary" th:onclick="getRandomLocation()">GetReady</button>
+						<button type="submit" class="btn btn-primary"
+							th:onclick="getRandomLocation()">GetReady</button>
 						<!--                       <button type="submit"
 				style="font-style: italic; background-color: black; color: white">GetReady</button> -->
 					</form>
@@ -57,11 +58,10 @@ html, body {
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">In or Out</h5>
-					<p class="card-text">With supporting text below as a natural
-						lead-in to additional content.</p>
+					<p class="card-text" id="demo"></p>
 
 
-					<a href="#" class="btn btn-primary">Go somewhere</a>
+					<a href="#" class="btn btn-primary" onclick="getLocation()">Go somewhere</a>
 				</div>
 			</div>
 		</div>
@@ -87,10 +87,31 @@ html, body {
 		</nav>
 		<!-- Navbar -->
 	</footer>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+		
+	<script>
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-		crossorigin="anonymous"></script>
+		crossorigin="anonymous"
+		
+		var x=document.getElementById( "demo");
+			function
+					getLocation() {
+			  if
+					(navigator.geolocation) {
+			    navigator.geolocation.getCurrentPosition(showPosition);
+			  } else { 
+			    x.innerHTML="Geolocation is not supported by this browser."
+					;
+			  }
+			}
+			function
+					showPosition(position) {
+			  x.innerHTML="Latitude: "+ position.coords.latitude + 
+			  "<br>Longitude: " + position.coords.longitude;
+			}
+			
+			
+	</script>
 </body>
 
 </html>
