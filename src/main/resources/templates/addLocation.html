@@ -32,24 +32,23 @@ and open the template in the editor.
         </nav>
         <!-- Navbar -->
 	</header>
-	<div class="container" style="margin-top: 10%;">
-		<h2 style="text-align: center">Add New Locations</h2>
+	<div class="container" style="margin-top: 8%;">
+		<h2 style="text-align: center">Add Location</h2><br>
 		<form style="text-align: center" action="#"
 			th:action="@{/location/create}" th:object="${location}" method="post">
-			<!--                 <input type="text" name="location_id" placeholder="Enter Location id" style="font-style: italic"><br> -->
-			<br> <input type="text" name="location_name"
-				placeholder="Enter Location name" style="font-style: italic"><br>
+			<br> <input type="text" name="location_name" required value="Enter Name"
+				placeholder="Enter Location name" ><br>
 
-			<br> <input type="text" name="latitude"
-				placeholder="Enter latitude" style="font-style: italic"><br>
-			<br> <input type="text" name="longitude"
-				placeholder="Enter longitude" style="font-style: italic"><br>
-			<br>
+			<br> <input type="number" name="latitude" step="0.0001"
+				placeholder="Enter latitude" required min="-90.0000" max="90.0000" value="-90.0000"><br>
+			<br> <input type="number" name="longitude" step="0.0001"
+				placeholder="Enter longitude" required min="-180.0000" max="180.0000" value= "-180.0000"><br>
+			<br><br>
 			<button type="submit"
-				style="font-style: italic; background-color: black; color: white">Save</button>
+				class="btn btn-primary">Save</button>&nbsp;&nbsp;&nbsp;
 			<input action="action" onclick="window.history.go(-1); return false;"
 				type="submit" value="Back"
-				style="font-style: italic; background-color: black; color: white" />
+				class="btn btn-primary" />
 		</form>
 	</div>
 	<footer>

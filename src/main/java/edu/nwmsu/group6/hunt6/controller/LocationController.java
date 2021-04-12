@@ -103,5 +103,14 @@ public class LocationController {
 		ModelAndView mav = new ModelAndView("redirect:/locations");
 		return mav;
 	}
+	
+	@RequestMapping(value = "/location/inorout", method = RequestMethod.GET)
+	public boolean isInside(@PathVariable("location") Location loc) {
+		double top = 49.3457868D; // # north lat
+		double left = -124.7844079D; // # west long
+		double right = -66.9513812D; // # east long
+		double bottom = 24.7433195D; // # south lat
+		return bottom <= loc.getLatitude() && loc.getLatitude() <= top && left <= loc.getLongitude() && loc.getLongitude() <= right;		
+	}
 
 }

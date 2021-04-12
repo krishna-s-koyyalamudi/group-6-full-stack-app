@@ -26,14 +26,16 @@ and open the template in the editor.
 			th:object="${location}" method="post">
 			<label for="location_name">Name</label> <input type="text"
 				th:field="*{location_name}" id="location_name"
-				placeholder="Location Name"> <span
+				placeholder="Location Name" required> <span
 				th:if="${#fields.hasErrors('location_name')}"
 				th:errors="*{location_name}"></span> <label for="latitude">Latitude</label>
-			<input type="text" th:field="*{latitude}" id="latitude"
-				placeholder="Latitude"> <span
+			<input type="number" th:field="*{latitude}" id="latitude"
+				placeholder="Latitude" step="0.0001"
+				min="-90.0000" max="90.0000" required> <span
 				th:if="${#fields.hasErrors('latitude')}" th:errors="*{latitude}"></span>
-			<label for="longitude">Longitude</label> <input type="text"
-				th:field="*{longitude}" id="longitude" placeholder="Longitude">
+			<label for="longitude">Longitude</label> <input type="number"
+				th:field="*{longitude}" id="longitude" step="0.0001"
+				placeholder="longitude" min="-180.0000" max="180.0000" required>
 			<span th:if="${#fields.hasErrors('longitude')}"
 				th:errors="*{longitude}"></span> <input type="submit"
 				value="Update Location">
