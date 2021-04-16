@@ -65,13 +65,14 @@ public class LocationController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/location/{id}", method = RequestMethod.GET)
-	public ModelAndView search(@PathVariable("id") Long id) {
-		Location locationFound = locationRepository.findById(id).orElse(new Location());
-		mv.addObject(locationFound);
-		mv.setViewName("searchResults");
-		return mv;
-	}
+//	@RequestMapping(value = "/location/{id}", method = RequestMethod.GET)
+//	public ModelAndView search(@PathVariable("id") Long id, Model model) {
+//		Location locationFound = locationRepository.findById(id)
+//				.orElseThrow(() -> new IllegalArgumentException("Invalid location Id:" + id));
+//		model.addAttribute("location",locationFound);	
+//		mv.setViewName("searchResults");
+//		return mv;
+//	}
 
 	@RequestMapping(value = "/location/edit/{id}", method = RequestMethod.GET)
 	public ModelAndView editLocation(@PathVariable("id") Long id, Model model) {

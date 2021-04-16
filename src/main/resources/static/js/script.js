@@ -6,7 +6,17 @@ crossorigin = "anonymous"
 var questLocationLat = document.getElementById("llat").getAttribute("value");
 var questLocationLong = document.getElementById("llong").getAttribute("value");*/
 
+let element1 = document.getElementById("ready");
 
+element1.addEventListener('click', getReady);
+element1.addEventListener('touch', getReady);
+
+async function getReady() {
+    let confirmation = "A Location has been picked. Start Playing !";
+    document.getElementById("hideloc").innerHTML = confirmation;
+    let utterance = new SpeechSynthesisUtterance(confirmation);
+    speechSynthesis.speak(utterance);
+}
 
 var x = document.getElementById("demo");
 function

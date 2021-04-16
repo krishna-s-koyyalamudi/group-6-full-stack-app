@@ -41,10 +41,10 @@ html, body {
 						th:object="${location}" method="get">
 						<p class="card-text" th:each="location: ${location}">
 
-							<span th:text="${location.location_name}"></span>
+							<span id="hideloc" style="visibility: hidden;" th:text="${location.location_name}"></span>
 							<!-- Get a random location to explore -->
 						</p>
-						<button type="submit" class="btn btn-primary"
+						<button id="ready" type="submit" class="btn btn-primary"
 							th:onclick="getRandomLocation()">GetReady</button>
 					</form>
 				</div>
@@ -74,13 +74,13 @@ html, body {
 					href="/locations">View Locations </a>
 				<!-- <a class="nav-link active" style="color: white;" aria-current="page" href="#">Home</a>
             <a class="nav-link active" style="color: white;" aria-current="page" href="#">Home</a> -->
-				<form class="d-flex input-group w-auto" action="#"
-					th:action="@{/location/{id}}" th:object="${locationFound}"
+				<!-- <form class="d-flex input-group w-auto" action="#"
+					th:action="@{/location/{id}}" th:object="${location}"
 					method="get">
 					 <input type="search" class="form-control" name="location_name"
 						placeholder="Enter Location" aria-label="Search" />
 					<button class="btn btn-outline-light" type="button">Search</button>
-				</form>
+				</form> -->
 			</div>
 		</nav>
 		<!-- Navbar -->
