@@ -29,7 +29,7 @@ public class LocationController {
 
 	ModelAndView mv = new ModelAndView();
 
-	@RequestMapping(value = "/location/random", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView getRandomLocation() {
 		mv.setViewName("index");
 		List<Location> locationsList = (List<Location>) locationRepository.findAll();

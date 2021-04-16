@@ -37,15 +37,18 @@ html, body {
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">Random Location</h5>
-					<form action="#" th:action="@{/location/random}"
+					<form action="#" th:action="@{/}"
 						th:object="${location}" method="get">
 						<p class="card-text" th:each="location: ${location}">
-
-							<span id="hideloc" style="visibility: hidden;" th:text="${location.location_name}"></span>
+							<div id= "read"></div>
+							<span style="visibility:hidden;" id="hideloc" value=""${location.location_name}"" th:text="${location.location_name}"></span>
+							<span style="visibility:hidden;" id="hideloclat" value=""${location.latitude}"" th:text="${location.latitude}"></span>
+							<span style="visibility:hidden;" id="hideloclong" value=""${location.longitude}"" th:text="${location.longitude}"></span>
+							
 							<!-- Get a random location to explore -->
 						</p>
 						<button id="ready" type="submit" class="btn btn-primary"
-							th:onclick="getRandomLocation()">GetReady</button>
+							th:onclick="home()">GetReady</button>
 					</form>
 				</div>
 			</div>
