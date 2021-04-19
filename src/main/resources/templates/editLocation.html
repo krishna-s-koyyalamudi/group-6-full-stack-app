@@ -40,11 +40,11 @@ html, body {
 				th:if="${#fields.hasErrors('location_name')}"
 				th:errors="*{location_name}"></span> <label for="latitude">Latitude</label>
 			<input type="number" th:field="*{latitude}" id="latitude"
-				placeholder="Latitude" step="0.0001" min="-90.0000" max="90.0000"
+				placeholder="Latitude" step="0.000001" min="-90.000000" max="90.000000"
 				required> <span th:if="${#fields.hasErrors('latitude')}"
 				th:errors="*{latitude}"></span> <label for="longitude">Longitude</label>
 			<input type="number" th:field="*{longitude}" id="longitude"
-				step="0.0001" placeholder="longitude" min="-180.0000" max="180.0000"
+				step="0.000001" placeholder="longitude" min="-180.000000" max="180.000000"
 				required> <span th:if="${#fields.hasErrors('longitude')}"
 				th:errors="*{longitude}"></span> <input type="submit"
 				value="Update Location">

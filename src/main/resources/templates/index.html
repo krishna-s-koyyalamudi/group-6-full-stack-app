@@ -37,18 +37,23 @@ html, body {
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">Random Location</h5>
-					<form action="#" th:action="@{/}"
-						th:object="${location}" method="get">
-						<p class="card-text" th:each="location: ${location}">
-							<div id= "read"></div>
-							<span style="visibility:hidden;" id="hideloc" value=""${location.location_name}"" th:text="${location.location_name}"></span>
-							<span style="visibility:hidden;" id="hideloclat" value=""${location.latitude}"" th:text="${location.latitude}"></span>
-							<span style="visibility:hidden;" id="hideloclong" value=""${location.longitude}"" th:text="${location.longitude}"></span>
-							
-							<!-- Get a random location to explore -->
-						</p>
-						<button id="ready" type="submit" class="btn btn-primary"
-							th:onclick="home()">GetReady</button>
+					<!-- 	<form action="#" th:action="@{/}" th:object="${location}"
+						method="get"> -->
+					<!-- <p class="card-text" th:each="location: ${location}">
+						<p id="read"></p> -->
+					<span style="visibility: hidden;" id="hideloc" value=""
+						${location.location_name}"" th:text="${location.location_name}"></span>
+					<span style="visibility: hidden;" id="hideloclat" value=""
+						${location.latitude}"" th:text="${location.latitude}"></span> <span
+						style="visibility: hidden;" id="hideloclong" value=""
+						${location.longitude}"" th:text="${location.longitude}"></span> <span
+						id="readyy"> </span>
+					<!-- Get a random location to explore -->
+					<!--  </p>  -->
+					<button id="refresh" class="btn btn-primary">GetReady</button>
+
+					<!-- <button id="ready" type="submit" class="btn btn-primary"
+							th:onclick="home()">GetReady</button> -->
 					</form>
 				</div>
 			</div>
@@ -59,7 +64,11 @@ html, body {
 				<div class="card-body">
 					<h5 class="card-title">In or Out</h5>
 					<p class="card-text" id="demo"></p>
-					<a href="#" class="btn btn-primary" onclick="getLocation()">Go
+					<div id="device-lat"></div>
+					<div id="device-long"></div>
+					<div id="result"></div>
+					<div id="distance"></div>
+					<a href="#" class="btn btn-primary" onclick="inOut()">Go
 						somewhere</a>
 				</div>
 			</div>
