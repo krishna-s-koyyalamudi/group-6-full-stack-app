@@ -21,7 +21,3 @@ A full stack Spring boot application
 * [MySQL Workbench](https://www.mysql.com/products/workbench/) - [Download](https://www.mysql.com/downloads/)
 * [Visual Studio Code](https://code.visualstudio.com/) - [Download](https://code.visualstudio.com/Download)
 
-## Important Links
-- Home Page -> https://hunt6.herokuapp.com/
-- Add new location -> https://hunt6.herokuapp.com/addlocation?
-- View locations (with edit and delete) -> https://hunt6.herokuapp.com/locations
