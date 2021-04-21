@@ -41,7 +41,7 @@ html, body {
 		<br>
 		<form style="text-align: center" action="#"
 			th:action="@{/location/create}" th:object="${location}" method="post">
-			<br> Location Name : <input type="text" name="location_name"
+			<br> Location Name : <input type="text" name="location_name" pattern="[a-zA-Z0-9]+[a-zA-Z0-9 ]+"
 				required placeholder="What's the place called?"><br>
 
 			<br> Latitude : <input type="number" name="latitude"

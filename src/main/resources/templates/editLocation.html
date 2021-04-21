@@ -35,7 +35,7 @@ html, body {
 			th:action="@{/location/update/{id}(id=${location.id})}"
 			th:object="${location}" method="post">
 			<label for="location_name">Name</label> <input type="text"
-				th:field="*{location_name}" id="location_name"
+				th:field="*{location_name}" id="location_name" pattern="[a-zA-Z0-9]+[a-zA-Z0-9 ]+"
 				placeholder="Location Name" required> <span
 				th:if="${#fields.hasErrors('location_name')}"
 				th:errors="*{location_name}"></span> <label for="latitude">Latitude</label>
