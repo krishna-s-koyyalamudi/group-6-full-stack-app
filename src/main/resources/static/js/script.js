@@ -77,7 +77,7 @@ async function inOut() {
 		if (isInside() == true) {
 			document.getElementById("result").innerHTML = "Congratulations!, You have found the location "+ questLocationName;
 			document.getElementById("distance").innerHTML = "  ";
-			let utterance = new SpeechSynthesisUtterance("Congratulations!, You have found the location ${questLocationName}");
+			let utterance = new SpeechSynthesisUtterance(`Congratulations!, You have found the location ${questLocationName}`);
 			speechSynthesis.speak(utterance);
 			// console.log(questLocationLat);
 			error = false;
