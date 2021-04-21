@@ -75,7 +75,7 @@ async function inOut() {
 		//document.getElementById("device-long").innerHTML = ("Current Longitude: " + currentlon.toFixed(9));
 
 		if (isInside() == true) {
-			document.getElementById("result").innerHTML = "Congratulations! You have found the location "+ questLocationName;
+			document.getElementById("result").innerHTML = "Congratulations! You have found the location " + questLocationName;
 			document.getElementById("distance").innerHTML = "  ";
 			let utterance = new SpeechSynthesisUtterance(`Congratulations!, You have found the location ${questLocationName}`);
 			speechSynthesis.speak(utterance);
@@ -84,15 +84,13 @@ async function inOut() {
 		};
 
 		if (error) {
-			document.getElementById("result").innerHTML = "Sorry,You're not near to the treasure";
+			document.getElementById("result").innerHTML = "Sorry,You're not near the treasure";
 			document.getElementById("distance").innerHTML = "Distance to the location:  " + distance.toFixed(2) + " miles.";
 
-			let utterance = new SpeechSynthesisUtterance("Sorry,You're not near to the treasure. You need to go "+distance.toFixed(2)+" miles to reach the target !");
+			let utterance = new SpeechSynthesisUtterance("Sorry,You're not near the treasure. You need to go " + distance.toFixed(2) + " miles to reach the target !");
 			speechSynthesis.speak(utterance);
 		}
 	}
-
-
 }
 
 function isInside(questLocationlat, questLocationlong) {
@@ -112,11 +110,9 @@ function distanceBetweenLocations(currentlat, currentlon, questLocationlat, ques
 	var p = 0.017453292519943295;
 	var questLocationlat = document.getElementById("hideloclat").innerHTML;
 	var questLocationlong = document.getElementById("hideloclong").innerHTML;
-	// console.log(currentlat, currentlon, questLocatiionLat, questLocationLong)
 	var a = 0.5 - Math.cos((questLocationlat - currentlat) * p) / 2 +
 		Math.cos(currentlat * p) * Math.cos(questLocationlat * p) *
 		(1 - Math.cos((questLocationlong - currentlon) * p)) / 2;
-	// console.log("================>");
 	var result = 12742 * Math.asin(Math.sqrt(a));
 	console.log(result)
 	console.log(currentlon, currentlat, questLocationlat, questLocationlong);
