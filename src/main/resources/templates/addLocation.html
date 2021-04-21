@@ -42,14 +42,14 @@ html, body {
 		<form style="text-align: center" action="#"
 			th:action="@{/location/create}" th:object="${location}" method="post">
 			<br> Location Name : <input type="text" name="location_name"
-				required value="Enter Name" placeholder="Enter Location name"><br>
+				required placeholder="What's the place called?"><br>
 
 			<br> Latitude : <input type="number" name="latitude"
-				step="0.000001" placeholder="Enter latitude" required min="-90.000000"
-				max="90.000000" value="-90.000000"><br> <br> Longitude
+				step="0.000001" placeholder="-90.000000" required min="-90.000000"
+				max="90.000000"><br> <br> Longitude
 			: <input type="number" name="longitude" step="0.000001"
-				placeholder="Enter longitude" required min="-180.000000"
-				max="180.000000" value="-180.000000"><br> <br>
+				placeholder="-180.000000" required min="-180.000000"
+				max="180.000000" ><br> <br>
 			<br>
 			<button type="submit" class="btn btn-primary">Save</button>
 			&nbsp;&nbsp;&nbsp; <input action="action"
