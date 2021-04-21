@@ -75,7 +75,7 @@ async function inOut() {
 		//document.getElementById("device-long").innerHTML = ("Current Longitude: " + currentlon.toFixed(9));
 
 		if (isInside() == true) {
-			document.getElementById("result").innerHTML = "Congratulations!, You have found the location "+ questLocationName;
+			document.getElementById("result").innerHTML = "Congratulations! You have found the location "+ questLocationName;
 			document.getElementById("distance").innerHTML = "  ";
 			let utterance = new SpeechSynthesisUtterance(`Congratulations!, You have found the location ${questLocationName}`);
 			speechSynthesis.speak(utterance);
