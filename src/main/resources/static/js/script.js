@@ -55,8 +55,8 @@ function getReady() {
 	if (incrementer === 0) {
 		document.getElementById("readyy").innerHTML = "The treasure location is ready..! ";
 		document.getElementById("readyy").innerHTML = " Start playing the game.";
-		console.log("============================", incrementer)
-		let utterance = new SpeechSynthesisUtterance(`The treasure location is ready start playing the game.`);
+		//console.log("============================", incrementer)
+		let utterance = new SpeechSynthesisUtterance(`The treasure location has been set. start exploring !`);
 		speechSynthesis.speak(utterance);
 		//document.getElementById("hint").innerHTML = ("Hint: " + questLocationHint);
 		//let utterance1 = new SpeechSynthesisUtterance(`Hint:   ${questLocationHint}`);
@@ -88,20 +88,20 @@ async function inOut() {
 
 		currentlat = locText.coords.latitude;
 
-		document.getElementById("device-lat").innerHTML = ("Current Latitude: " + currentlat.toFixed(9));
+		//document.getElementById("device-lat").innerHTML = ("Current Latitude: " + currentlat.toFixed(9));
 
 		currentlon = locText.coords.longitude;
 
-		document.getElementById("device-long").innerHTML = ("Current Longitude: " + currentlon.toFixed(9));
+		//document.getElementById("device-long").innerHTML = ("Current Longitude: " + currentlon.toFixed(9));
 
 
 
 
 		if (isInside() == true) {
 			// console.log("==========> inside inside")
-			document.getElementById("result").innerHTML = "Congrats you found location",questLocationName;
+			document.getElementById("result").innerHTML = "Congratulations!, You have found the location ${questLocationName}",questLocationName;
 			document.getElementById("distance").innerHTML = "  ";
-			let utterance = new SpeechSynthesisUtterance(`Congratulations!, You found location ${questLocationName}`);
+			let utterance = new SpeechSynthesisUtterance(`Congratulations!, You have found the location ${questLocationName}`);
 			speechSynthesis.speak(utterance);
 			// console.log(questLocationLat);
 			error = false;
@@ -110,9 +110,9 @@ async function inOut() {
 		if (error) {
 			// console.log("error is here")
 			document.getElementById("result").innerHTML = "Sorry,You're not near to the treasure";
-			document.getElementById("distance").innerHTML = "Distance to the location:  " + distance + " miles.";
+			document.getElementById("distance").innerHTML = "Distance to the location:  " + distance.toFixed(2) + " miles.";
 
-			let utterance = new SpeechSynthesisUtterance("Sorry,You're not near to the treasure");
+			let utterance = new SpeechSynthesisUtterance("Sorry,You're not near to the treasure. You need to go "+distance.toFixed(2)+" miles to reach the target !");
 			speechSynthesis.speak(utterance);
 		}
 		// console.log(incrementer, "===================>")
