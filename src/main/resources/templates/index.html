@@ -46,9 +46,9 @@ html, body {
 					<span style="visibility: hidden;" id="hideloclat" value=""
 						${location.latitude}"" th:text="${location.latitude}"></span> <span
 						style="visibility: hidden;" id="hideloclong" value=""
-						${location.longitude}"" th:text="${location.longitude}"></span> <p
-						id="readyy"> </p>
-						<br>
+						${location.longitude}"" th:text="${location.longitude}"></span>
+					<p id="readyy"></p>
+					<br>
 					<!-- Get a random location to explore -->
 					<!--  </p>  -->
 					<button id="refresh" class="btn btn-primary">GetReady</button>
@@ -69,13 +69,13 @@ html, body {
 					<div id="device-long"></div>
 					<div id="result"></div>
 					<div id="distance"></div>
-					<br>
-					<a href="#" class="btn btn-primary" onclick="inOut()">Go
+					<br> <a href="#" class="btn btn-primary" onclick="inOut()">Go
 						somewhere</a>
 				</div>
 			</div>
 		</div>
 		<div class="col-sm-2"></div>
+
 	</div>
 	<footer>
 		<!-- Navbar -->
@@ -85,10 +85,12 @@ html, body {
 				<a class="navbar-brand" style="color: white;" href="/">Home</a> <a
 					class="navbar-brand" style="color: white;" href="/addlocation">Add
 					Location </a> <a class="navbar-brand" style="color: white;"
-					href="/locations">View Locations </a>
-				<!-- <a class="nav-link active" style="color: white;" aria-current="page" href="#">Home</a>
+					href="/locations">View Locations </a> 
+					<a href="https://github.com/Krishna-Koyyalamudi/group-6-full-stack-app" style="color: white;">
+            <i class="fab fa-github " style="color: white;"></i> GitHub</a> 
+					<!-- <a class="nav-link active" style="color: white;" aria-current="page" href="#">Home</a>
             <a class="nav-link active" style="color: white;" aria-current="page" href="#">Home</a> -->
-				<!-- <form class="d-flex input-group w-auto" action="#"
+					<!-- <form class="d-flex input-group w-auto" action="#"
 					th:action="@{/location/{id}}" th:object="${location}"
 					method="get">
 					 <input type="search" class="form-control" name="location_name"
