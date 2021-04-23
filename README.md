@@ -1,4 +1,6 @@
-# group-6-full-stack-app
+
+# Treasure Hunt
+## group-6-full-stack-app
 A full stack Spring boot application
 
 ## Required Stack
@@ -6,14 +8,17 @@ A full stack Spring boot application
 * Spring-Data-Jpa
 * Hibernate
 * Maven Repository
+* MySQL
+* PostgreSQL
+* Heroku Server
+* GitHub
 
 ### Front-End-Technologies
 * HTML
 * CSS
+* Bootstrap
 * JavaScript
-
-### Project Tracking
-* GitHub Projects - [Kanban board](https://github.com/Krishna-Koyyalamudi/group-6-full-stack-app/projects/1)
+* Thymeleaf
 
 ### Tools and Software
 * JDK - [Download](https://adoptopenjdk.net/)
