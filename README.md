@@ -27,6 +27,20 @@ A full stack Spring boot application
 * [Visual Studio Code](https://code.visualstudio.com/) - [Download](https://code.visualstudio.com/Download)
 * [Heroku](https://www.heroku.com/) - Cloud Application Platform
 
+### Screenshots
+
+![Home Page](https://github.com/Krishna-Koyyalamudi/group-6-full-stack-app/blob/main/docs/Screenshots/Screenshot%20(1).png)
+
+![Outside the Location](https://github.com/Krishna-Koyyalamudi/group-6-full-stack-app/blob/main/docs/Screenshots/Screenshot%20(3).png)
+
+![Inside the Location](https://github.com/Krishna-Koyyalamudi/group-6-full-stack-app/blob/main/docs/Screenshots/Screenshot%20(4).png)
+
+![View Locations](https://github.com/Krishna-Koyyalamudi/group-6-full-stack-app/blob/main/docs/Screenshots/Screenshot%20(6).png)
+
+
+
+
+
 ### Implementation Style
 #### 1.Parallel programming:
 It is a type of computation in which large tasks can be divided into smaller tasks, which can then be implemented simultaneously.
